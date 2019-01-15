@@ -1,0 +1,8 @@
+<launch>
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch">
+        <arg name="port" value="9000" />
+    </include>
+
+    <node pkg="homework" name="webserver" type="webserver.py" args="8000" required="true" />
+    <node pkg="homework" name="guessingGame" type="guessingGame" required="true" />
+</launch>
